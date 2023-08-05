@@ -1,7 +1,6 @@
 import random
 import undetected_chromedriver as uc
 
-from selenium.webdriver.chrome.options import Options as ChromeOptions
 from for_request import user_agent_list
 
 
@@ -10,7 +9,7 @@ class UnChromedriverManager:
 
     def __init__(self) -> None:
         # опции браузера
-        self.chrome_options = ChromeOptions()
+        self.chrome_options = uc.ChromeOptions()
         self.chrome_options.page_load_strategy = "eager"
         self.chrome_options.add_argument("--headless")
         self.chrome_options.add_argument("--no-sandbox")
