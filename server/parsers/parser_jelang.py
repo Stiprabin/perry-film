@@ -2,7 +2,7 @@ import time
 import random
 
 from soup import get_soup
-from unchromedriver_manager import UnChromedriverManager
+from webdriver.unchromedriver_manager import UnChromedriverManager
 from selenium.webdriver.common.by import By
 
 
