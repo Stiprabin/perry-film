@@ -19,7 +19,11 @@ class UnChromedriverManager:
         self.chrome_options.add_argument("--user-agent=" + random.choice(user_agent_list))
 
     def __enter__(self) -> uc.Chrome:
-        self.driver = uc.Chrome(options=self.chrome_options)
+        self.driver = uc.Chrome(
+            options=self.chrome_options,
+            executable_path="chromedriver",
+            version_main=114
+        )
         return self.driver
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> None:
