@@ -1,3 +1,7 @@
+import requests
+response = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+print(response.text)
+
 from flask import (
     Flask,
     request,
