@@ -16,6 +16,7 @@ class UnChromedriverManager:
         self.chrome_options.page_load_strategy = "eager"
 
         self.chrome_options.add_argument("--headless")
+        self.chrome_options.add_argument("--no-sandbox")
         self.chrome_options.add_argument("--start-maximized")
         self.chrome_options.add_argument("--disable-dev-shm-usage")
         self.chrome_options.add_argument("--disable-infobars")
@@ -26,7 +27,7 @@ class UnChromedriverManager:
     def __enter__(self) -> uc.Chrome:
         self.driver = uc.Chrome(
             version_main=114,
-            browser_executable_path=os.environ.get("CHROMEDRIVER_PATH"),
+            executable_path=os.environ.get("CHROMEDRIVER_PATH"),
             options=self.chrome_options
         )
         return self.driver
