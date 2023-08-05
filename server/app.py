@@ -24,11 +24,13 @@ def post() -> Response:
     print(f"Запрос \"{query}\" получен!")
 
     if url == data_list[0][0]:
+        print(78)
         films: list = parser_lordfilm.parser(
             url=data_list[0][1],
             query=query,
             search_id="ajax_search"
         )
+        print(78)
     elif url == data_list[1][0]:
         films: list = parser_lordfilm.parser(
             url=data_list[1][1],
