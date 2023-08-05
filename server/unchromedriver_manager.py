@@ -12,7 +12,6 @@ class UnChromedriverManager:
         self.chrome_options = uc.ChromeOptions()
         self.chrome_options.page_load_strategy = "eager"
         self.chrome_options.add_argument("--headless")
-        self.chrome_options.add_argument("--no-sandbox")
         self.chrome_options.add_argument("--start-maximized")
         self.chrome_options.add_argument("--disable-dev-shm-usage")
         self.chrome_options.add_argument("--disable-infobars")
