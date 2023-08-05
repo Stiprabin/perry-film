@@ -1,4 +1,3 @@
-import sys
 from flask import (
     Flask,
     request,
@@ -23,7 +22,6 @@ def post() -> Response:
     query = request.form['query']
 
     print(f"Запрос \"{query}\" получен!")
-    print(sys.platform)
 
     if url == data_list[0][0]:
         films: list = parser_lordfilm.parser(
