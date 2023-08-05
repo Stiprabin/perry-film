@@ -27,7 +27,7 @@ class UnChromedriverManager:
         self.driver = uc.Chrome(
             options=self.chrome_options,
             executable_path=os.environ.get("CHROMEDRIVER_PATH"),
-            version_main=115
+            version_main=114
         )
         return self.driver
 
