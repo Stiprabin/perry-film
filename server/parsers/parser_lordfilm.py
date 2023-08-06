@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
 
 def parser(
@@ -24,7 +25,11 @@ def parser(
         driver.get(url)
 
         # поиск фильмов
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, search_id))).send_keys(query + Keys.ENTER)
+        try:
+            WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, search_id))).send_keys(query + Keys.ENTER)
+        except TimeoutException:
+            return parser(url, query, search_id)
+
         time.sleep(random.randint(5, 7))
 
         current_url = driver.current_url
