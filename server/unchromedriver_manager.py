@@ -1,3 +1,6 @@
+import os
+print(os.path.abspath(__file__))
+
 import random
 import undetected_chromedriver as uc
 
