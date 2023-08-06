@@ -13,7 +13,7 @@ class UnChromedriverManager:
         self.chrome_options.page_load_strategy = "eager"
         self.chrome_options.arguments.extend([
             '--headless',
-            '--start-maximized',
+            '--window-size=1366,768',
             '--no-sandbox',
             '--disable-setuid-sandbox',
             '--disable-dev-shm-usage',
