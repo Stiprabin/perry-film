@@ -33,4 +33,5 @@ class UnChromedriverManager:
 
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> None:
+        self.driver.close()
         self.driver.quit()
