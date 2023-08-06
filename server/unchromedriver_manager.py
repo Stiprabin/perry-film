@@ -1,6 +1,3 @@
-import os
-print(os.path.abspath(__file__))
-
 import random
 import undetected_chromedriver as uc
 
@@ -29,6 +26,7 @@ class UnChromedriverManager:
     def __enter__(self) -> uc.Chrome:
         self.driver = uc.Chrome(
             version_main=114,
+            browser_executable_path="/opt/render/project/.render/chrome/opt/google/chrome",
             options=self.chrome_options
         )
         return self.driver
