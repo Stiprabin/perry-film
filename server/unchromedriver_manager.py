@@ -25,7 +25,7 @@ class UnChromedriverManager:
 
     def __enter__(self) -> uc.Chrome:
         self.driver = uc.Chrome(
-            version_main=114,
+            version_main=115,
             browser_executable_path="/opt/render/project/.render/chrome/opt/google/chrome/chrome",
             options=self.chrome_options
         )
@@ -33,5 +33,4 @@ class UnChromedriverManager:
 
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> None:
-        self.driver.close()
         self.driver.quit()
