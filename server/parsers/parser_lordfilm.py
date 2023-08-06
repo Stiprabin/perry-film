@@ -24,7 +24,7 @@ def parser(
         driver.get(url)
 
         # поиск фильмов
-        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, search_id))).send_keys(query + Keys.ENTER)
+        WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, search_id))).send_keys(query + Keys.ENTER)
 
         time.sleep(random.randint(5, 7))
 
