@@ -22,7 +22,7 @@ from kivy.uix.popup import Popup
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 
-if platform == 'android':
+if platform == "android":
     from android.permissions import request_permissions, Permission
     request_permissions([
         Permission.INTERNET,
