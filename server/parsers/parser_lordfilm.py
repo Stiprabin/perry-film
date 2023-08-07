@@ -4,7 +4,7 @@ import random
 
 from soup import get_soup
 from for_request import data_list
-from webdriver.unchromedriver_manager import UnChromedriverManager
+from unchromedriver_manager import UnChromedriverManager
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
