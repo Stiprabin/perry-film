@@ -20,4 +20,5 @@ fi
 export PATH="${PATH}:/opt/render/project/.render/chrome/opt/google/chrome"
 
 # add your own build commands...
+/opt/render/project/src/.venv/bin/python3.10 -m pip install --upgrade pip
 pip install -r ./server/requirements.txt
