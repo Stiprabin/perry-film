@@ -26,7 +26,6 @@ class UnChromedriverManager:
     def __enter__(self) -> uc.Chrome:
         self.driver = uc.Chrome(
             version_main=114,
-            executable_path="./webdriver/chromedriver",
             browser_executable_path="/opt/render/project/.render/chrome/opt/google/chrome/chrome",
             options=self.chrome_options
         )
