@@ -1,0 +1,148 @@
+#:kivy 2.2.1
+
+
+<BasePopup@Popup>:
+    title: "Ничосе"
+    title_font: "TNRB"
+    title_size: root.height * .08
+    auto_dismiss: False
+    size: 400, 400
+    size_hint: None, None
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: 5
+        spacing: 5
+
+        Label:
+            markup: True
+            text: "Ссылка скопирована в [u]буфер обмена![/u] Для просмотра откройте ее в [u]медиапроигрывателе VLC.[/u]"
+            text_size: root.width * .87, None
+            font_name: "TNR"
+            font_size: root.height * .08
+
+        MDRaisedButton:
+            text: "Ладно"
+            font_name: "TNR"
+            font_size: root.height * .08
+            size_hint_x: 1
+            on_release: root.dismiss()
+
+
+<MainLayout>:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    MDBoxLayout:
+        orientation: "horizontal"
+        spacing: 10
+        size_hint_y: .1
+
+        MDRectangleFlatButton:
+            id: button_lu
+            text: "tv1...lu"
+            font_size: root.height * .025
+            font_name: "TNRB"
+            size_hint_x: .33
+            line_width: 2
+            md_bg_color: "#262626"
+            on_release: root.button_lu()
+
+        MDRectangleFlatButton:
+            id: button_black
+            text: "tv1...black"
+            font_size: root.height * .025
+            font_name: "TNRB"
+            size_hint_x: .33
+            line_width: 2
+            md_bg_color: "#262626"
+            on_release: root.button_black()
+
+        MDRectangleFlatButton:
+            id: button_jelang
+            text: "Jelang"
+            font_name: "TNRB"
+            size_hint_x: .33
+            font_size: root.height * .025
+            line_width: 2
+            md_bg_color: "#363636"
+            on_release: root.button_jelang()
+
+    Label:
+        id: main_label
+        text: "Поиск на Jelang"
+        font_name: "TNR"
+        font_size: root.height * .035
+        size_hint_y: .1
+
+    MDBoxLayout:
+        orientation: "horizontal"
+        spacing: 5
+        size_hint_y: .075
+
+        TextInput:
+            id: search_textinput
+            multiline: False
+            font_name: "TNR"
+            font_size: root.height * .028
+
+        MDRectangleFlatButton:
+            id: del_button
+            text: "DEL"
+            font_name: "TNRB"
+            font_size: root.height * .025
+            size_hint_x: .05
+            line_width: 2
+            md_bg_color: "#262626"
+            on_release: root.ids.search_textinput.text = ''
+
+    MDRaisedButton:
+        id: search_button
+        text: "Найти"
+        font_name: "TNR"
+        font_size: root.height * .035
+        size_hint_y: .1
+        size_hint_x: 1
+        on_release: root.search()
+
+    ScrollView:
+        always_overscroll: False
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            id: response_label
+            multiline: True
+            markup: True
+            padding: 10
+            text: "Тут ничо нет!"
+            text_size: root.width * 0.9, None
+            font_name: "TNR"
+            font_size: root.height * .035
+            size: self.texture_size
+            size_hint: None, None
+            on_ref_press: root.ref_press(args[1])
+
+    MDBoxLayout:
+        orientation: "horizontal"
+        spacing: 10
+        size_hint_y: .1
+
+        MDRectangleFlatButton:
+            text: "Назад"
+            font_name: "TNRB"
+            font_size: root.height * .025
+            size_hint_x: .33
+            line_width: 2
+            md_bg_color: "#262626"
+            on_release: root.button_backward()
+
+        MDRectangleFlatButton:
+            text: "Вперед"
+            font_name: "TNRB"
+            font_size: root.height * .025
+            size_hint_x: .33
+            line_width: 2
+            md_bg_color: "#262626"
+            on_release: root.button_forward()
